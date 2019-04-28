@@ -1,0 +1,3 @@
+<?php
+    include (get_template_directory() . '/includes/front/enqueue.php');
+ ?>

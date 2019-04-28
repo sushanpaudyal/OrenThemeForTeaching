@@ -1,0 +1,36 @@
+/*
+Error: Invalid mixin "============================ *\/".
+        on line 3 of E:\project\00-prototipe\insure\PREVIEW\sass\reset.sass
+
+1: /* ==========================
+2: RESET
+3: ============================= *\/
+4: /**
+5:  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+6:  * http://cssreset.com
+7:  *\/
+8: html, body, div, span, applet, object, iframe,
+
+Backtrace:
+E:\project\00-prototipe\insure\PREVIEW\sass\reset.sass:3
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:1070:in `parse_mixin_definition'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:639:in `parse_line'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:525:in `build_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:544:in `block in append_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:543:in `each'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:543:in `append_children'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:396:in `_to_tree'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+C:/Program Files (x86)/Koala/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+C:/Program Files (x86)/Koala/bin/sass:18:in `load'
+C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid mixin \"============================ */\".\A         on line 3 of E:\project\00-prototipe\insure\PREVIEW\sass\reset.sass\A \A 1: /* ==========================\A 2: RESET\A 3: ============================= */\A 4: /**\A 5:  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)\A 6:  * http://cssreset.com\A 7:  */\A 8: html, body, div, span, applet, object, iframe,"; }
