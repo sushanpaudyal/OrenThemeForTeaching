@@ -1,48 +1,33 @@
 <?php get_header(); ?>
 	<!-- BANNER -->
 	<div id="oc-fullslider" class="banner owl-carousel">
+
+		<?php
+		   $args = array(
+          'post_type' => 'sliders',
+					'posts_per_page' => -1,
+					'orderby' => 'title',
+					'order' => 'ASC'
+			 );
+			 $sliders = new WP_Query($args);
+			 while($sliders->have_posts()) : $sliders->the_post();
+   ?>
         <div class="owl-slide">
         	<div class="item">
-	            <img src="<?php echo get_template_directory_uri() ?>/assets/images/dummy-img-1920x900.jpg" alt="Slider">
+	            <img src="<?php echo the_post_thumbnail_url(); ?>" alt="Slider">
 	            <div class="slider-pos">
 		            <div class="container">
 		            	<div class="wrap-caption text-center">
-			                <h1 class="caption-heading">Start Your Business<br>with Oren.</h1>
-			                <p class="">Awesome template without any coding or design skills!</p>
+			                <h1 class="caption-heading"><?php the_title(); ?></h1>
+			                <p class=""><?php the_content(); ?></p>
 			                <a href="#" class="btn btn-primary">Learn More</a> <a href="#" class="btn btn-ghost-light">Get Started</a>
 			            </div>
 		            </div>
 	            </div>
         	</div>
         </div>
-        <div class="owl-slide">
-        	<div class="item">
-	            <img src="<?php echo get_template_directory_uri() ?>/assets/images/dummy-img-1920x900-3.jpg" alt="Slider">
-	            <div class="slider-pos">
-		            <div class="container">
-		            	<div class="wrap-caption">
-			                <h1 class="caption-heading">Start Your Business<br>with Oren.</h1>
-			                <p class="">Awesome template without any coding or design skills!</p>
-			                <a href="#" class="btn btn-primary">Learn More</a> <a href="#" class="btn btn-ghost-light">Get Started</a>
-			            </div>
-		            </div>
-	            </div>
-        	</div>
-        </div>
-        <div class="owl-slide">
-        	<div class="item">
-	            <img src="<?php echo get_template_directory_uri() ?>/assets/images/dummy-img-1920x900.jpg" alt="Slider">
-	            <div class="slider-pos">
-		            <div class="container">
-		            	<div class="wrap-caption text-center">
-			                <h1 class="caption-heading">Start Your Business<br>with Oren.</h1>
-			                <p class="">Awesome template without any coding or design skills!</p>
-			                <a href="#" class="btn btn-primary">Learn More</a> <a href="#" class="btn btn-ghost-light">Get Started</a>
-			            </div>
-		            </div>
-	            </div>
-        	</div>
-        </div>
+
+<?php endwhile; wp_reset_postdata(); ?>
     </div>
 
 	<div class="clearfix"></div>
