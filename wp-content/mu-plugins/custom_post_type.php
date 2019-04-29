@@ -1,6 +1,8 @@
 <?php
 
 add_action('init', 'oren_slider_post_type', 0 );
+add_action('init', 'oren_team_post_type', 0 );
+
 
 
 function oren_slider_post_type() {
@@ -41,6 +43,51 @@ function oren_slider_post_type() {
     );
     // register the post Type
     register_post_type( 'sliders', $args);
+}
+
+
+
+
+
+
+function oren_team_post_type() {
+      // Labels for the Post Type
+    $labels = array(
+      'name'                => _x( 'Teams', 'Post Type General Name', 'oren' ),
+      'singular_name'       => _x( 'Team', 'Post Type Singular Name', 'oren' ),
+      'menu_name'           => __( 'Teams', 'oren' ),
+      'parent_item_colon'   => __( 'Parent Team', 'oren' ),
+      'all_items'           => __( 'All Teams', 'oren' ),
+      'view_item'           => __( 'View Team', 'oren' ),
+      'add_new_item'        => __( 'Add New Team', 'oren' ),
+      'add_new'             => __( 'Add New Team', 'oren' ),
+      'edit_item'           => __( 'Edit Team', 'oren' ),
+      'update_item'         => __( 'Update Team', 'oren' ),
+      'search_items'        => __( 'Search Team', 'oren' ),
+      'not_found'           => __( 'No teams found', 'oren' ),
+      'not_found_in_trash'  => __( 'Not found in trash', 'oren' ),
+    );
+    // Another Customizations
+    $args = array(
+        'label'   => __('Teams','oren' ),
+        'description' => __('Teams for Oren', 'oren'),
+        'labels'  => $labels,
+        'supports' => array('title', 'thumbnail', 'editor'),
+        'hierarchical' => false,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menus' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-video-alt',
+        'can_export' => true,
+        'has_archive' => false,
+        'exclude_from_search' => false,
+        'capability_type' => 'page',
+    );
+    // register the post Type
+    register_post_type( 'teams', $args);
 }
 
  ?>

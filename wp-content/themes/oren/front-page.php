@@ -311,65 +311,41 @@
 
 				<div class="row">
 
+					<?php
+						 $args = array(
+								'post_type' => 'teams',
+								'posts_per_page' => -1,
+								'orderby' => 'title',
+								'order' => 'ASC'
+						 );
+						 $sliders = new WP_Query($args);
+						 while($sliders->have_posts()) : $sliders->the_post();
+				 ?>
 					<!-- Item 1 -->
 					<div class="col-sm-12 col-md-12 col-lg-4">
 						<div class="rs-team-1">
 							<div class="desc">
-								<p>Hello, I am Doel graphic designer & web developer at Rometheme.net. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p>
+									<?php the_content(); ?>
+								</p>
 							</div>
-							<div class="media shadow"><img src="<?php echo get_template_directory_uri() ?>/assets/images/dummy-img-400x400.jpg" alt="" class="img-fluid"></div>
+							<div class="media shadow"><img src="<?php echo the_post_thumbnail_url('team'); ?>" alt="" class="img-fluid"></div>
 							<div class="body">
-								<div class="title">John Doel</div>
-								<div class="position">Web Developer</div>
+								<div class="title"><?php the_title(); ?></div>
+								<div class="position"><?php the_field('position'); ?></div>
 								<ul class="social-icon">
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-skype"></span></a></li>
-									<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+									<li><a href="<?php the_field('facebook'); ?>"><span class="fa fa-facebook"></span></a></li>
+									<li><a href="<?php the_field('twitter'); ?>"><span class="fa fa-twitter"></span></a></li>
+									<li><a href="<?php the_field('skype'); ?>"><span class="fa fa-skype"></span></a></li>
+									<li><a href="<?php the_field('linkedin'); ?>"><span class="fa fa-linkedin"></span></a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 
-					<!-- Item 2 -->
-					<div class="col-sm-12 col-md-12 col-lg-4">
-						<div class="rs-team-1">
-							<div class="desc">
-								<p>Hello, I am Doel graphic designer & web developer at Rometheme.net. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-							<div class="media shadow"><img src="<?php echo get_template_directory_uri() ?>/assets/images/dummy-img-400x400.jpg" alt="" class="img-fluid"></div>
-							<div class="body">
-								<div class="title">Pinky Doel</div>
-								<div class="position">Marketing</div>
-								<ul class="social-icon">
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-skype"></span></a></li>
-									<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+				<?php endwhile; wp_reset_postdata(); ?>
 
-					<!-- Item 3 -->
-					<div class="col-sm-12 col-md-12 col-lg-4">
-						<div class="rs-team-1">
-							<div class="desc">
-								<p>Hello, I am Doel graphic designer & web developer at Rometheme.net. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-							<div class="media shadow"><img src="<?php echo get_template_directory_uri() ?>/assets/images/dummy-img-400x400.jpg" alt="" class="img-fluid"></div>
-							<div class="body">
-								<div class="title">Yahdi Romelo</div>
-								<div class="position">Graphic Designer</div>
-								<ul class="social-icon">
-									<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-									<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-									<li><a href="#"><span class="fa fa-skype"></span></a></li>
-									<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
+
 
 				</div>
 			</div>
