@@ -35,9 +35,15 @@
 		<div class="navbar-main">
 			<div class="container">
 			    <nav id="navbar-example" class="navbar navbar-expand-lg">
+
+        <?php if(has_custom_logo() || is_customize_preview()){
+          the_custom_logo();
+        } else { ?>
+
 			        <a class="navbar-brand" href="index.html">
 						<img src="<?php echo get_template_directory_uri() ?>/assets/images/logo.png" alt="" />
 					</a>
+        <?php } ?>
 			        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			            <span class="navbar-toggler-icon"></span>
 			        </button>
